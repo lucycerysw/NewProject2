@@ -1,0 +1,8 @@
+using Plots
+init = 0
+walkers = 1000
+walk_length = 100
+walks = cumsum(vcat(fill(init, 1, walkers), # initial state
+                    rand([-1, 1], walk_length, walkers)), 
+               dims=1) 
+plot(walks, legend=nothing)
